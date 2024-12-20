@@ -32,8 +32,8 @@ const logoutAndRedirect = async () => {
 
 <template> 
   <header class="border-b">
-    <div class="flex justify-between items-center">
-      <div class="px-6">
+    <div class="flex justify-between items-center min-h-20">
+      <div class="px-6" v-if="user">
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
@@ -68,8 +68,9 @@ const logoutAndRedirect = async () => {
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div class="text-end p-4 px-6">
-        <template v-if="user">
+
+      <template v-if="user">
+        <div class="text-end p-4 px-6">
           <Button
             class="rounded-full"
             size="icon"
@@ -77,8 +78,8 @@ const logoutAndRedirect = async () => {
           >
             <LogOut />
           </Button>
-        </template>
-      </div>
+        </div>
+      </template>
     </div>
   </header>
   <div>
