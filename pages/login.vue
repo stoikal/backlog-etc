@@ -14,8 +14,8 @@ definePageMeta({ middleware: 'auth' })
 const supabase = useSupabaseClient()
 
 const formState = ref({
-  email: '',
-  password: ''
+  email: 'user@example.com',
+  password: 'user'
 })
 
 const handleSubmit = async () => {
