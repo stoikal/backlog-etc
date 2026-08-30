@@ -7,8 +7,6 @@ import AddGame from '~/components/backlog-games/AddGame/index.vue';
 import ListCard from '~/components/backlog-games/ListCard/index.vue';
 import FilteredLists from '~/components/backlog-games/FilteredLists.vue';
 
-definePageMeta({ middleware: 'auth' })
-
 const rawLists = ref([])
 
 const loadLists = async () => {

@@ -9,9 +9,6 @@ import {
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
-definePageMeta({ middleware: 'auth' })
-
-const supabase = useSupabaseClient()
 
 const formState = ref({
   email: 'user@example.com',
@@ -20,11 +17,8 @@ const formState = ref({
 
 const handleSubmit = async () => {
   const { email, password } = formState.value
-  const { error } = await supabase.auth.signInWithPassword({ email, password })
-
-  if (!error) {
-    navigateTo({ path: '/' })
-  }
+  
+  alert(email)
 }
 </script>
 <template>
@@ -35,7 +29,7 @@ const handleSubmit = async () => {
       </CardHeader>
       <CardContent>
         <form
-          class="text-end space-y-6"
+          class="space-y-6 text-end"
           @submit.prevent="handleSubmit"
         >
           <Input

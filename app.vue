@@ -5,7 +5,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
@@ -20,19 +19,11 @@ useHead({
     class: 'dark',
   },
 })
-
-const supabase = useSupabaseClient()
-const user = useSupabaseUser()
-
-const logoutAndRedirect = async () => {
-  await supabase.auth.signOut();
-  navigateTo({ path: '/login' })
-}
 </script>
 
 <template> 
   <header class="border-b">
-    <div class="flex justify-between items-center min-h-20">
+    <div class="flex items-center justify-between min-h-20">
       <div class="px-6" v-if="user">
         <NavigationMenu>
           <NavigationMenuList>
@@ -43,7 +34,7 @@ const logoutAndRedirect = async () => {
                   <li>
                     <NuxtLink
                       to="/backlog/reading"
-                      class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      class="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div class="text-sm font-medium leading-none">Reading</div>
                     </NuxtLink>
@@ -51,7 +42,7 @@ const logoutAndRedirect = async () => {
                   <li>
                     <NuxtLink
                       to="/backlog/games"
-                      class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      class="block p-3 space-y-1 leading-none no-underline transition-colors rounded-md outline-none select-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div class="text-sm font-medium leading-none">Games</div>
                     </NuxtLink>
@@ -70,11 +61,10 @@ const logoutAndRedirect = async () => {
       </div>
 
       <template v-if="user">
-        <div class="text-end p-4 px-6">
+        <div class="p-4 px-6 text-end">
           <Button
             class="rounded-full"
             size="icon"
-            @click="logoutAndRedirect"
           >
             <LogOut />
           </Button>
