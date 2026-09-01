@@ -1,41 +1,52 @@
 {
-  "name": "backlog-etc",
-  "private": true,
-  "version": "0.3.1",
+  "name": "backlog-etc-fe",
   "type": "module",
+  "private": true,
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:unit": "vitest --project unit",
+    "test:nuxt": "vitest --project nuxt"
   },
   "dependencies": {
-    "@tiptap/pm": "^2.27.2",
-    "@tiptap/starter-kit": "^2.27.2",
-    "@tiptap/vue-3": "^2.27.2",
-    "@vueuse/core": "^11.3.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "dayjs": "^1.11.23",
-    "lucide-vue-next": "^0.439.0",
-    "nuxt": "^3.21.11",
-    "radix-vue": "^1.9.17",
-    "shadcn-nuxt": "^0.10.4",
-    "tailwind-merge": "^2.6.1",
-    "tailwindcss-animate": "^1.0.7",
-    "vue": "^3.5.42"
-  },
-  "engines": {
-    "node": "22",
-    "npm": "11"
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/image": "^2.1.0",
+    "@nuxt/test-utils": "^4.2.0",
+    "@nuxt/ui": "^4.11.0",
+    "@tiptap/core": "^3.31.0",
+    "@tiptap/extension-bubble-menu": "^3.31.0",
+    "@tiptap/extension-code": "^3.31.0",
+    "@tiptap/extension-collaboration": "^3.31.0",
+    "@tiptap/extension-drag-handle": "^3.31.0",
+    "@tiptap/extension-drag-handle-vue-3": "^3.31.0",
+    "@tiptap/extension-floating-menu": "^3.31.0",
+    "@tiptap/extension-horizontal-rule": "^3.31.0",
+    "@tiptap/extension-image": "^3.31.0",
+    "@tiptap/extension-mention": "^3.31.0",
+    "@tiptap/extension-node-range": "^3.31.0",
+    "@tiptap/extension-placeholder": "^3.31.0",
+    "@tiptap/markdown": "^3.31.0",
+    "@tiptap/pm": "^3.31.0",
+    "@tiptap/starter-kit": "^3.31.0",
+    "@tiptap/suggestion": "^3.31.0",
+    "@tiptap/vue-3": "^3.31.0",
+    "@vueuse/nuxt": "^14.4.0",
+    "eslint": "^10.9.1",
+    "nuxt": "^4.5.2",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "vue": "^3.5.42",
+    "vue-router": "^5.3.0"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.14.0",
-    "typescript": "^5.9.3"
-  },
-  "allowScripts": {
-    "vue-demi@0.14.10": true,
-    "esbuild@0.28.2": true
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vue/test-utils": "^2.5.0",
+    "vitest": "^4.1.11"
   }
 }
