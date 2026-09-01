@@ -11,27 +11,31 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@tiptap/pm": "^2.6.6",
-    "@tiptap/starter-kit": "^2.6.6",
-    "@tiptap/vue-3": "^2.6.6",
-    "@vueuse/core": "^11.0.3",
-    "class-variance-authority": "^0.7.0",
+    "@tiptap/pm": "^2.27.2",
+    "@tiptap/starter-kit": "^2.27.2",
+    "@tiptap/vue-3": "^2.27.2",
+    "@vueuse/core": "^11.3.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "dayjs": "^1.11.13",
+    "dayjs": "^1.11.23",
     "lucide-vue-next": "^0.439.0",
-    "nuxt": "^3.13.0",
-    "radix-vue": "^1.9.5",
+    "nuxt": "^3.21.11",
+    "radix-vue": "^1.9.17",
     "shadcn-nuxt": "^0.10.4",
-    "tailwind-merge": "^2.5.2",
+    "tailwind-merge": "^2.6.1",
     "tailwindcss-animate": "^1.0.7",
-    "vue": "latest"
+    "vue": "^3.5.42"
   },
   "engines": {
     "node": "22",
     "npm": "11"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "typescript": "^5.5.4"
+    "@nuxtjs/tailwindcss": "^6.14.0",
+    "typescript": "^5.9.3"
+  },
+  "allowScripts": {
+    "vue-demi@0.14.10": true,
+    "esbuild@0.28.2": true
   }
 }
