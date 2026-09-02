@@ -52,7 +52,7 @@ onUnmounted(() => observer?.disconnect())
             <ul v-if="list.items?.length" class="space-y-2">
               <li v-for="item in list.items" :key="item.name" class="flex items-center gap-2">
                 <UCheckbox :model-value="item.status === 'finished'" disabled />
-                <span :class="item.status === 'finished' && 'line-through text-muted'">{{ item.name }}</span>
+                <span :class="item.status === 'finished' && 'line-through text-muted'">{{ item.name }} <span v-if="item.releaseYear" class="text-muted text-xs">({{ item.releaseYear }})</span></span>
               </li>
             </ul>
             <p v-else class="text-sm text-muted">No items</p>
