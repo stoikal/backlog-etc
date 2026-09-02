@@ -1,5 +1,7 @@
 export default defineNuxtRouteMiddleware((to) => {
-  const token = useCookie('accessToken').value
+  if (import.meta.server) return
+
+  const token = localStorage.getItem('accessToken')
   const isLoginPage = to.path === '/login'
 
   if (isLoginPage && token) return navigateTo('/')

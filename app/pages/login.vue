@@ -6,11 +6,6 @@ definePageMeta({ layout: false })
 
 const toast = useToast()
 const errorMessage = ref<string | null>(null)
-const tokenCookie = useCookie('accessToken', {
-  maxAge: 60 * 15,
-  sameSite: 'lax',
-  path: '/'
-})
 
 const fields: AuthFormField[] = [{
   name: 'email',
@@ -40,7 +35,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       method: 'POST',
       body: event.data
     })
-    tokenCookie.value = data.token
+    localStorage.setItem('accessToken', data.token)
     toast.add({ title: 'Welcome!', description: `Logged in as ${data.username}`, color: 'success' })
     await navigateTo('/')
   } catch (err: any) {

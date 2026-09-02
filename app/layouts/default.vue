@@ -13,7 +13,7 @@
         :ui="{ link: 'p-1.5 overflow-hidden' }"
         :items="[
           { label: 'Home', to: '/', icon: 'i-lucide-house' },
-          { label: 'Gaming', to: '/gaming', icon: 'i-lucide-chess-pawn' },
+          { label: 'Gaming', to: '/gaming/playlists', icon: 'i-lucide-chess-pawn' },
         ]"
       />
     </USidebar>
