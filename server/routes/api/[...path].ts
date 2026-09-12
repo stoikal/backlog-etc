@@ -1,13 +1,12 @@
 export default defineEventHandler(async (event) => {
-  const slug = event.context.params?.path || ''
-  const targetPath = slug ? `/api/${slug}` : '/api'
+  const path = event.context.params?.path || "";
 
-  const query = getQuery(event)
-  const url = new URL(targetPath, 'http://localhost:8080')
-
+  const query = getQuery(event);
+  const url = new URL("http://127.0.0.1:8080/api/v1/" + path);
+  console.log(url.toString())
   Object.entries(query).forEach(([key, val]) => {
-    if (val !== undefined) url.searchParams.set(key, String(val))
-  })
+    if (val !== undefined) url.searchParams.set(key, String(val));
+  });
 
-  return proxyRequest(event, url.toString())
-})
+  return proxyRequest(event, url.toString());
+});
